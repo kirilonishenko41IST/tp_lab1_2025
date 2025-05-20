@@ -1,13 +1,19 @@
-print("Вітаємо у калькуляторі витрат на подорож!")
+print("Розрахунок витрат на поїздку")
 
-distance = float(input("Введіть відстань до пункту призначення (км): "))
-fuel_consumption = float(input("Введіть середню витрату пального (л/100км): "))
-fuel_price = float(input("Введіть середню ціну пального (грн/л): "))
-passengers = int(input("Введіть кількість пасажирів: "))
+km = input("Введіть відстань до пункту призначення(км):")
+km = float(km)
 
-total_fuel = (distance / 100) * fuel_consumption
-total_cost = total_fuel * fuel_price
-cost_per_passenger = total_cost / passengers
+liters = input("Введіть середню витрату пального(л/100км):")
+liters = float(liters)
 
-print(f"\nЗагальна вартість пального: {total_cost:.2f} грн")
-print(f"Вартість пального на одного пасажира: {cost_per_passenger:.2f} грн")
+price = input("Введіть середню ціну пального(грн/л):")
+price = float(price)
+
+people = input("Введіть кількість пассажирів:")
+people = int(people)
+
+total = (km / 100) * liters * price
+one_person = total / people
+
+print("Загальна вартість пального:", total)
+print("Загальна вартість на одного пассажира:", round(one_person, 2))
