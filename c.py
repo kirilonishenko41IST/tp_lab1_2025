@@ -1,38 +1,27 @@
-tasks = []
-
-def show_menu():
-    print("\nОберіть дію:")
-    print("1. Додати завдання")
-    print("2. Переглянути завдання")
-    print("3. Позначити як виконане")
-    print("4. Видалити завдання")
-    print("5. Вийти")
+list = []
 
 while True:
-    show_menu()
-    choice = input("Введіть номер дії: ")
+    print("1. Додати")
+    print("2. Показати")
+    print("3. Виконано")
+    print("4. Видалити")
+    print("5. Вихід")
 
-    if choice == "1":
-        task = input("Введіть опис завдання: ")
-        tasks.append({"text": task, "done": False})
-    elif choice == "2":
-        if not tasks:
-            print("Список завдань порожній.")
-        else:
-            print("Список завдань:")
-            for i, task in enumerate(tasks, start=1):
-                status = "[x]" if task["done"] else "[ ]"
-                print(f"{i}. {status} {task['text']}")
-    elif choice == "3":
-        num = int(input("Введіть номер виконаного завдання: "))
-        if 0 < num <= len(tasks):
-            tasks[num - 1]["done"] = True
-    elif choice == "4":
-        num = int(input("Введіть номер завдання для видалення: "))
-        if 0 < num <= len(tasks):
-            tasks.pop(num - 1)
-    elif choice == "5":
-        print("Дякую за використання!")
+    x = input("Ваш вибір: ")
+
+    if x == "1":
+        t = input("Нове завдання:")
+        list.append([t, False])
+    elif x == "2":
+        for i in range(len(list)):
+            z = list[i]
+            done = "x" if z[1] else " "
+            print(i+1, "[{}]".format(done), z[0])
+    elif x == "3":
+        n = int(input("Номер:"))
+        list[n-1][1] = True
+    elif x == "4":
+        n = int(input("Номер:"))
+        list.pop(n-1)
+    elif x == "5":
         break
-    else:
-        print("Невірний вибір. Спробуйте ще раз.")
