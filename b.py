@@ -1,6 +1,6 @@
 import random
 
-words = ["ананас", "малина", "пальма", "машина", "школа", "сонце", "друзі", "горіхи", "компот", "печиво"]
+words = ["ананас", "панас", "люлька", "помацав", "під", "матрацом", "недоопалок", "потужність", "навчити", "потужності"]
 word = random.choice(words)
 hidden = ["_"] * len(word)
 attempts = 7
@@ -11,7 +11,7 @@ print("Вітаємо у грі 'Вгадай слово'!")
 while attempts > 0 and "_" in hidden:
     print("\nЗагадане слово:", " ".join(hidden))
     print(f"У вас є {attempts} спроб.")
-    letter = input("Введіть літеру: ").lower()
+    letter = input("Введіть літеру:").lower()
 
     if letter in used_letters:
         print("Цю літеру ви вже вводили.")
