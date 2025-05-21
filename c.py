@@ -7,7 +7,7 @@ while True:
     print("4. Видалити")
     print("5. Вихід")
 
-    x = input("Ваш вибір: ")
+    x = input("Ваш вибір:")
 
     if x == "1":
         t = input("Нове завдання:")
